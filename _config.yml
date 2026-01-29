@@ -14,10 +14,10 @@ title_separator: "-"
 name: &name "Alexandre Robin"
 description: &description "Your Name's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
 url:
-  https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+  https://alexrob123.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
   # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl: "" # the subpath of your site, e.g. "/blog"
-repository: "academicpages/academicpages.github.io"
+repository: "alexrob123/alexrob123.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -29,13 +29,9 @@ author:
   pronouns: # example: "she/her"
   bio: "PhD student in Artificial Intelligence."
   # location: "Earth"
-  uri: # URL
-
   employer: "Université Paris-Dauphine | PSL"
-  linkedin: "alexandre-robin-3b3579173"
-  github: "alexrob123"
-  orcid: "https://orcid.org/0009-0000-9122-8868"
-  email: &email alexandre.robin81@gmail.com
+  uri: # URL
+  email: &email "alexandre.robin81@gmail.com"
 
   # Academic websites
   academia: # URL
@@ -43,6 +39,7 @@ author:
   googlescholar: # URL
   inspire-hep: # URL
   impactstory: # URL
+  orcid: "https://orcid.org/0009-0000-9122-8868"
   semantic: # URL
   ssrn: # URL
   pubmed: # URL
@@ -54,6 +51,7 @@ author:
   bitbucket: # Username - Update with your username on the site
   codepen: # Username
   dribbble: # Username
+  github: "alexrob123"
   kaggle: # Username
   stackoverflow: # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 
@@ -68,6 +66,7 @@ author:
   keybase: # Username
   instagram: # Username
   lastfm: # Username
+  linkedin: "alexandre-robin-3b3579173"
   mastodon: # URL
   medium: # URL
   pinterest: # Username
@@ -120,7 +119,7 @@ comments:
     colorscheme: # "light" (default), "dark"
 staticman:
   allowedFields: ["name", "email", "url", "message"]
-  branch: "master" # "master", "gh-pages"
+  branch: "gh-pages" # "master", "gh-pages"
   commitMessage: "New comment."
   filename: comment-{@timestamp}
   format: "yml"
