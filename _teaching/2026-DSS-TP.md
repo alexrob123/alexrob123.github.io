@@ -10,8 +10,16 @@ location: "Paris, France"
 
 TP pour le cours de Données Semi-Structurées de Dario Colazzo à l'Université Paris-Dauphine - PSL.
 
-<!-- # Heading 1
+## TP1 submission
 
-# Heading 2
+[Submit](https://www.dropbox.com/request/FEuBWHu5jeAxYpZR8y7t)
 
-# Heading 3 -->
+Submission should be formatted as:
+
+```
+NAME.zip
+├── exo_{i}.xml
+└── exo_{i}.dtd
+```
+
+**Deadline**: 2026-03-01
