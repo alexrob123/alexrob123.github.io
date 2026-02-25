@@ -14,6 +14,12 @@
 
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    {% assign show_excerpt = include.show_excerpt %}
+    {% if show_excerpt == nil %}
+      {% assign show_excerpt = true %}
+    {% endif %}
+    {% assign compact_description_date = include.compact_description_date %}
+
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src=
@@ -34,22 +40,28 @@
       {% endif %}
     </h2>
     
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+    {% if include.show_description and post.description %}
+      <p class="archive__item-excerpt" itemprop="description"{% if compact_description_date %} style="margin-bottom: 0;"{% endif %}>{{ post.description | markdownify }}</p>
     {% endif %}
 
         {% if post.collection == 'teaching' %}
           <!-- <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p> -->
-          <p class="page__meta">{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+          <p class="page__meta"{% if compact_description_date and include.show_description and post.description %} style="margin-top: 0;"{% endif %}>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
         {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+          <p{% if compact_description_date and include.show_description and post.description %} style="margin-top: 0;"{% endif %}>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+          <p class="page__meta"{% if compact_description_date and include.show_description and post.description %} style="margin-top: 0;"{% endif %}>
+            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}
+            <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y-%m-%d" }}</time>
+            {% if post.read_time %}
+              <span style="margin-left: 0.75em;"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>
+            {% endif %}
+          </p>
         {% endif %}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
+    {% if show_excerpt and post.excerpt and site.read_more != 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
+    {% elsif show_excerpt and post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
     
