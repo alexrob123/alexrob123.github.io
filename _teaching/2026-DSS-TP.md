@@ -3,7 +3,7 @@ title: "Données Semi-Structurées"
 collection: teaching
 type: "TP"
 permalink: /teaching/2026-DSS-TP
-venue: "Université Paris-Dauphine - PSL, L3 Info"
+venue: "Université Paris-Dauphine - PSL, L3 IM2D"
 date: 2026-01-01
 location: "Paris, France"
 ---
