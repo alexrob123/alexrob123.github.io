@@ -10,14 +10,14 @@ location: "Paris, France"
 
 TP pour le cours de Données Semi-Structurées de Dario Colazzo à l'Université Paris-Dauphine - PSL.
 
-## TP1 submission
+## TP1 soumission
 
-[Submit](https://www.dropbox.com/request/FEuBWHu5jeAxYpZR8y7t)
+[Soumettre](https://www.dropbox.com/request/FEuBWHu5jeAxYpZR8y7t)
 
-Submission should be formatted as:
+Le fichier soumis doit être au format :
 
 ```
-NAME.zip
+NOM-DE-FAMILLE.zip
 ├── exo_{i}.xml
 └── exo_{i}.dtd
 ```
