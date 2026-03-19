@@ -10,7 +10,7 @@ location: "Paris, France"
 
 TP pour le cours de Données Semi-Structurées de Dario Colazzo à l'Université Paris-Dauphine - PSL.
 
-## TP1 soumission
+## Soumission TP1 (XML-DTD)
 
 [Soumettre](https://www.dropbox.com/request/FEuBWHu5jeAxYpZR8y7t)
 
@@ -23,3 +23,26 @@ NOM-DE-FAMILLE.zip
 ```
 
 **Deadline**: 2026-03-01
+
+## Soumission TP2 (DOM)
+
+[Soumettre](https://www.dropbox.com/request/xOcGBal8PsOa1ysygh9Y)
+
+Le fichier soumis doit être au format :
+
+```
+NOM-DE-FAMILLE.py
+└── q{i}(xml_file)
+```
+
+_Exemple_
+
+```python
+# TARTEMPION-TARTEMOLLE.py
+
+def q1(xml_file):
+    # ...
+    return answer
+```
+
+**Deadline**: 2026-03-22
