@@ -46,3 +46,17 @@ def q1(xml_file):
 ```
 
 **Deadline**: 2026-03-22
+
+## Soumission TP3 (JSON)
+
+[Soumettre](https://www.dropbox.com/request/rb6Edu3eQvJNB6fX7eCo)
+
+Le fichier soumis doit être au format :
+
+```
+NOM-DE-FAMILLE.zip
+├── data.json
+└── schema.json
+```
+
+**Deadline**: 2026-03-29
