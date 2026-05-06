@@ -9,46 +9,48 @@ tags:
 ---
 
 **Table of content**
-- [\\alpha\_\\lambda(P\_{XY}, Q\_{XY})](#alpha_lambdap_xy-q_xy)
-  - [Experiments](#experiments)
-  - [Proofs and derivations](#proofs-and-derivations)
-    - [PRJD](#prjd)
-    - [Upper bound](#upper-bound)
+- [Introduction](#introduction)
+- [Precision Recall for Joint Distributions](#precision-recall-for-joint-distributions)
+- [Experiments](#experiments)
+- [Proofs and derivations](#proofs-and-derivations)
+		- [PRJD](#prjd)
+		- [Upper bound](#upper-bound)
 
 
-## Introduction
+# Introduction
 
 We investigate the limit of evaluation metrics when it comes to evaluating conditional generative models.
 
 We first want to investigate a brute-force adaptation of current methods to joint distributions. 
 
 
-## Precision Recall for Joint Distributions
+# Precision Recall for Joint Distributions
 
 We propose to extend Precision and Recall as defines in Sajjadi-2018 to joint distributions.
 
 $$
-\alpha_\lambda(P_{XY}, Q_{XY}) 
-= 
+\alpha_\lambda(P_{XY}, Q_{XY}) =
 \mathbb E_Y \bigg[ \alpha_\lambda(P_{X|Y}, \, Q_{X|Y}) \bigg]
 $$
 
 
-Furthermore, 
+Furthermore
+
 $$
 \alpha_\lambda(P_{XY}, Q_{XY}) 
 \le
 \alpha_\lambda(P_{X}, Q_{X}) 
 $$
 
-## Experiments
+# Experiments
 
 
 
-## Proofs and derivations
+# Proofs and derivations
 
 
 ### PRJD
+
 $$
 \begin{aligned}
 \alpha_\lambda(P_{XY}, Q_{XY}) 
