@@ -30,9 +30,9 @@ author:
   avatar: "profil.jpg"
   name: *name
   pronouns: # example: "she/her"
-  bio: "PhD student in Machine Learning at LAMSADE, Université Paris-Dauphine | PSL."
+  bio: "PhD student in Machine Learning at LAMSADE, Université Paris Dauphine - PSL."
   # location: "Earth"
-  employer: "Université Paris-Dauphine | PSL"
+  employer: "Université Paris Dauphine - PSL"
   uri: # URL
   email: &email "alexandre.robin81@gmail.com"
 
