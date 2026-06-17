@@ -242,9 +242,6 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-  reports:
-    output: true
-    permalink: /:collection/:path/
 
 # These settings control how pages and collections are included in the site
 defaults:
@@ -301,16 +298,6 @@ defaults:
       layout: talk
       author_profile: true
       share: false
-  # _reports
-  - scope:
-      path: ""
-      type: reports
-    values:
-      layout: report-single
-      author_profile: true
-      share: false
-      comments: false
-      sitemap: false
 
 # Sass/SCSS
 sass:
