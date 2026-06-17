@@ -19,15 +19,18 @@ url:
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "alexrob123/alexrob123.github.io"
 
+####################################################################################################
+# AUTHOR CONTENT
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
+####################################################################################################
 author:
   # Biographic information
   avatar: "profil.jpg"
   name: *name
   pronouns: # example: "she/her"
-  bio: "PhD student in Artificial Intelligence."
+  bio: "PhD student in Machine Learning at LAMSADE, Université Paris-Dauphine | PSL."
   # location: "Earth"
   employer: "Université Paris-Dauphine | PSL"
   uri: # URL
