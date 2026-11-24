@@ -1,12 +1,25 @@
 ---
-layout: archive
-title: "Teaching"
+layout: null
 permalink: /teaching/
-author_profile: true
+sitemap: false
 ---
-
-{% include base_path %}
-
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{%- comment -%}
+  There is no separate Teaching page: /teaching/ redirects to the Teaching
+  section of the homepage. Individual course pages (/teaching/<course>/) are
+  generated from _teaching/ and are not affected.
+{%- endcomment -%}
+{%- assign target = "/#teaching" | relative_url -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Teaching – {{ site.title }}</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ target }}">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <script>window.location.replace("{{ target }}");</script>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ target }}">Teaching</a>…</p>
+</body>
+</html>
