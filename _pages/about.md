@@ -1,15 +1,97 @@
 ---
 permalink: /
-title: "Hi, I’m Alex"
+title: ""
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-I am currently pursuing a PhD at LAMSADE, Université Paris-Dauphine - PSL on evaluation of conditional generative models.
+<div id="about" class="home-anchor"></div>
 
-This website (under development) aims to gather my research and teaching activities.
+Welcome to my professional webpage!
+I am currently pursuing a PhD at LAMSADE, Université Paris-Dauphine - PSL.
+
+My research focus is on the evaluation of conditional generative models.
+More precisely, I am interested in the trade-off between quality and diversity of generated data and aim to provide insights of both notions at condition level. 
+
+
+<div class="home-section" id="publications" markdown="1">
+
+## Publications
+
+{% assign publication_items = site.publications | sort: "date" | reverse %}
+{% if publication_items.size == 0 %}
+<p class="home-empty">Work in progress.</p>
+{% endif %}
+{% for pub in publication_items %}
+<div class="publication-item">
+<h3><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></h3>
+<p>{% if pub.authors %}{{ pub.authors }}<br>{% endif %}{{ pub.venue }}, {{ pub.date | date: "%Y" }}{% if pub.paperurl %}<br><a href="{{ pub.paperurl }}">PDF</a>{% endif %}</p>
+</div>
+{% endfor %}
+
+{% if publication_items.size > 0 %}
+[All publications →]({{ "/publications/" | relative_url }})
+{% endif %}
+
+</div>
+
+<div class="home-section" id="teaching" markdown="1">
+
+{% assign teaching_items = site.teaching | sort: "date" | reverse %}
+{% assign academic_years = teaching_items | map: "academic_year" | compact | uniq | sort | reverse %}
+
+<div class="section-header">
+<h2>Teaching</h2>
+<div class="teaching-filters" role="group" aria-label="Filter courses by academic year">
+<button type="button" class="teaching-filter is-active" data-filter="all">All</button>
+{% for ay in academic_years %}<button type="button" class="teaching-filter" data-filter="{{ ay }}">{{ ay }}</button>
+{% endfor %}
+</div>
+</div>
+
+{% for item in teaching_items %}
+<div class="teaching-item" data-year="{{ item.academic_year }}">
+<h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+<p class="teaching-meta">{{ item.type }} &ndash; {{ item.level }} &middot; {{ item.university }}{% if item.supervisor %}<br>Teaching supervisor: {% if item.supervisor_url %}<a href="{{ item.supervisor_url }}">{{ item.supervisor }}</a>{% else %}{{ item.supervisor }}{% endif %}{% endif %}{% if item.academic_year %}<br>{{ item.academic_year }}{% endif %}</p>
+</div>
+{% endfor %}
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var buttons = document.querySelectorAll(".teaching-filter");
+  var items = document.querySelectorAll(".teaching-item");
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var filter = button.getAttribute("data-filter");
+      buttons.forEach(function (b) { b.classList.toggle("is-active", b === button); });
+      items.forEach(function (item) {
+        item.hidden = filter !== "all" && item.getAttribute("data-year") !== filter;
+      });
+    });
+  });
+});
+</script>
+
+{% comment %} Blog section hidden. Remove this comment/endcomment pair to show it again.
+<div class="home-section" id="blog" markdown="1">
+
+## Blog
+
+{% for post in site.posts limit: 3 %}
+<div class="blog-item">
+<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+<p>{{ post.date | date: "%b %Y" }}{% if post.description %}<br>{{ post.description }}{% endif %}</p>
+</div>
+{% endfor %}
+
+[All posts →]({{ "/blog/" | relative_url }})
+
+</div>
+{% endcomment %}
 
 <!-- ---
 permalink: /

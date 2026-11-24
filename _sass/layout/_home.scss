@@ -1,0 +1,122 @@
+/* ==========================================================================
+   HOMEPAGE SECTIONS (rounded boxes around each section)
+   ========================================================================== */
+
+/* Keep anchored sections (/#about, /#teaching, ...) clear of the fixed top menu */
+.home-anchor,
+.home-section {
+  scroll-margin-top: 5em;
+}
+
+.home-section {
+  margin: 0 0 1.5em;
+  padding: 1em 1.5em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 12px;
+  background-color: var(--global-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+  > h2:first-child {
+    margin-top: 0.25em;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Academic-year filter buttons in the Teaching section */
+/* Section title with the filter buttons on the same line, right-aligned.
+   The line under it replaces the usual line under the h2. */
+.section-header {
+  display: flex;
+  flex-wrap: wrap;            /* buttons go below the title on narrow screens */
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em 1em;
+  margin: 0.25em 0 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--global-border-color);
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+  }
+}
+
+.teaching-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0;
+}
+
+.teaching-filter {
+  padding: 0.3em 0.9em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--global-text-color);
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+
+  &:hover {
+    border-color: var(--global-link-color);
+    color: var(--global-link-color);
+  }
+
+  &.is-active {
+    background-color: var(--global-link-color);
+    border-color: var(--global-link-color);
+    color: #fff;
+  }
+}
+
+/* Spacing for the course / post entries inside a section */
+/* Course titles: text color (black in light mode) instead of the link color */
+.teaching-item h3 a,
+.teaching-item h3 a:visited {
+  color: var(--global-text-color);
+}
+
+.teaching-item h3 a:hover {
+  color: var(--global-link-color);
+}
+
+/* Thin line between courses. Only drawn above a course that has another
+   visible course before it, so it stays correct when the year filter hides some. */
+.teaching-item:not([hidden]) ~ .teaching-item:not([hidden]) {
+  border-top: 1px solid var(--global-border-color);
+  padding-top: 0.5em;
+}
+
+/* Lines under the course title (type/level/university, supervisor, academic year) */
+.teaching-meta {
+  font-size: 0.85em;
+  /* grey: 62% text color + 38% background, so it also works in dark mode.
+     Lower the % for lighter, raise it for darker.
+     Links inside (supervisor names) keep the link color. */
+  color: #808080;
+  color: color-mix(in srgb, var(--global-text-color) 62%, var(--global-bg-color));
+}
+
+.home-empty {
+  color: var(--global-text-color-light);
+  font-style: italic;
+}
+
+.publication-item,
+.teaching-item,
+.blog-item {
+  margin-bottom: 1em;
+
+  h3 {
+    margin: 0.5em 0 0.25em;
+  }
+
+  p {
+    margin: 0;
+  }
+}
