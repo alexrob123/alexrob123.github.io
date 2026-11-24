@@ -1,4 +1,5 @@
 ---
+published: false # set to true (or remove) to publish the guide page again
 permalink: /markdown/
 title: "Markdown"
 author_profile: true

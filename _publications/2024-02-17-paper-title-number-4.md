@@ -1,4 +1,5 @@
 ---
+published: false # template example, kept for reference
 title: "Paper Title Number 4"
 collection: publications
 category: conferences
