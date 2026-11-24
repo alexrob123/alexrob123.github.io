@@ -1,0 +1,84 @@
+/* ==========================================================================
+   CUSTOM SITE-WIDE TWEAKS
+   ========================================================================== */
+
+/* Link color (light and dark mode). Hover is a slightly darker shade. */
+$custom-link-color: #85b4de;
+
+:root,
+html[data-theme="dark"] {
+  --global-link-color: #{$custom-link-color};
+  --global-link-color-visited: #{$custom-link-color};
+  --global-link-color-hover: #{mix(#000, $custom-link-color, 20%)};
+}
+
+/* Slightly smaller text everywhere except the left sidebar (author profile).
+   Sizes inside these containers are relative (em), so everything scales together.
+   Change this one value to adjust: 1 = original size. */
+$content-font-scale: 0.9;
+
+.masthead,
+.page,
+.archive,
+.page__footer {
+  font-size: $content-font-scale * 1em;
+}
+
+/* Top menu: align the menu links (About, Publications, ...) with the left edge
+   of the page text. The site name stays on the far left.
+   Uses the same grid math as `.page` in _page.scss:
+   span(10 of 12 last) + prefix(0.5 of 12). */
+.masthead__inner-wrap {
+  /* same horizontal padding as #main, independent of the menu font size */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@include breakpoint($large) {
+  .masthead__menu .visible-links {
+    position: relative;
+    padding-left: calc(100% - #{span(10 of 12)} + #{span(0.5 of 12 wide)});
+
+    /* site name pinned to the left */
+    > li:first-child {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* first menu link starts exactly at the text edge */
+    > li:nth-child(2) a {
+      margin-left: 0;
+    }
+  }
+}
+
+/* No underline on links: the link color is enough. */
+.page a,
+.page a:hover,
+.archive a,
+.archive a:hover,
+.archive .archive__item-title,
+.archive .archive__item:hover .archive__item-title {
+  text-decoration: none;
+}
+
+/* List pages (Teaching, Publications): match the homepage look. */
+.archive {
+  /* same text width as the homepage (.page also has this right padding) */
+  @include breakpoint($large) {
+    @include suffix(2 of 12);
+  }
+
+  /* item titles: same size and font as the homepage titles (h3) */
+  .archive__item-title {
+    font-size: $type-size-5;
+    font-family: $header-font-family;
+  }
+
+  /* line under the title: same size as on the homepage */
+  .list__item .page__meta {
+    font-size: 0.85em;
+  }
+}
