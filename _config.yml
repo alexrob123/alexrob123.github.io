@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale: "en"
 site_theme: "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title: "Alexandre Robin / Alexandre Hontebeyrie"
+title: "Alexandre Robin"
 title_separator: "-"
 name: &name "Alexandre Robin"
 description: &description "Your Name's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
@@ -275,6 +275,7 @@ defaults:
       author_profile: true
       share: false
       comments: true
+      pagination: false # hide the Previous / Next buttons on course pages
   # _publications
   - scope:
       path: ""
