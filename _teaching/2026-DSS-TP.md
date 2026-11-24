@@ -4,7 +4,12 @@ collection: teaching
 type: "TP"
 permalink: /teaching/2026-DSS-TP
 venue: "Université Paris Dauphine - PSL, L3 IM2D"
+level: "L3 IMDD"
+university: "Université Paris Dauphine - PSL"
+supervisor: "Dario Colazzo"
+supervisor_url: "https://www.lamsade.dauphine.fr/~colazzo/"
 date: 2026-01-01
+academic_year: "2025-2026"
 location: "Paris, France"
 ---
 
